@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -46,5 +47,7 @@ func main() {
 	r.HandleFunc("/ping", CreatePingHandle).Methods("POST")
 	http.Handle("/", r)
 	// Start server
-	log.Fatal(http.ListenAndServe(":8000", r))
+	fmt.Println("Server listen port 8000")
+	listen := http.ListenAndServe("http://125.235.4.59:8000", r)
+	log.Fatal(listen)
 }
