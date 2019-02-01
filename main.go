@@ -48,6 +48,6 @@ func main() {
 	http.Handle("/", r)
 	// Start server
 	fmt.Println("Server listen port 8000")
-	listen := http.ListenAndServe("http://125.235.4.59:8000", r)
+	listen := http.ListenAndServe(":8000", r)
 	log.Fatal(listen)
 }
